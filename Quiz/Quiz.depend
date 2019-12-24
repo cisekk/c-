@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1514140574 source:c:\users\krzyc\desktop\c++\quiz\quiz\main.cpp
+	<iostream>
+
+1577211416 source:c:\users\krzyc\desktop\c++\quiz\quiz\pytanie.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	"pytanie.h"
+
+1577137899 c:\users\krzyc\desktop\c++\quiz\quiz\pytanie.h
+	<iostream>
+
