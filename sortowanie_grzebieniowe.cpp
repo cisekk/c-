@@ -82,7 +82,9 @@ int main()
                 cin >> zakres;
                     for (i=0; i<ilosc; i++)
                         {
-                        tablica[i] = rand () %zakres+1;
+                        Randomize();
+                        tablica[i] = Random(zakres)+1;
+                         //= rand (zakres+1);
                         }
                         system ( "cls");
                                     cout << "Liczby przed sortowaniem:" << endl << endl;

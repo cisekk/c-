@@ -10,9 +10,9 @@ void Pytanie::wczytaj()
     fstream plik;
     plik.open("pytania.txt", ios::in);
 
-    if plik.good(()==false)
+    if (plik.good()==false)
     {
-        cout << "Nie mozna odczytac pliku pytania.txt"
+        cout << "Nie mozna odczytac pliku pytania.txt";
     }
 
     int nr_linii=(nr_pytania-1)*6+1;
@@ -21,15 +21,41 @@ void Pytanie::wczytaj()
 
     while (getline(plik,linia))
     {
-        if (aktualny_nr=nr_linii) tresc=linia;
-        if (aktualny_nr=nr_linii+1) a=linia;
-        if (aktualny_nr=nr_linii+2) b=linia;
-        if (aktualny_nr=nr_linii+3) c=linia;
-        if (aktualny_nr=nr_linii+4) d=linia;
-        if (aktualny_nr=nr_linii+5) poprawna=linia;
+        if (aktualny_nr==nr_linii) tresc=linia;
+        if (aktualny_nr==nr_linii+1) a=linia;
+        if (aktualny_nr==nr_linii+2) b=linia;
+        if (aktualny_nr==nr_linii+3) c=linia;
+        if (aktualny_nr==nr_linii+4) d=linia;
+        if (aktualny_nr==nr_linii+5) poprawna=linia;
         aktualny_nr++;
 
     }
-    plik.close;
+    plik.close();
 
+}
+
+void Pytanie::zadaj()
+{
+    cout << endl << tresc << endl;
+    cout << a << endl;
+    cout << b << endl;
+    cout << c << endl;
+    cout << d << cout;
+    cout << "---------------------" << endl;
+    cout << "Odpowiedz:" << endl;
+    cin >> odpowiedz;
+
+
+}
+
+void Pytanie::sprawdz()
+{
+    if(odpowiedz==poprawna)
+    {
+        punkt=1;
+    }
+    else
+    {
+        punkt=0;
+    }
 }

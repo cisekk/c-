@@ -13,19 +13,6 @@ object Form1: TForm1
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object LabNazwa: TLabel
-    Left = 450
-    Top = 112
-    Width = 402
-    Height = 49
-    Caption = 'Sortowanie grzebieniowe'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -37
-    Font.Name = 'EFN Mokre Literki'
-    Font.Style = []
-    ParentFont = False
-  end
   object LabPodpis: TLabel
     Left = 992
     Top = 584
@@ -40,32 +27,17 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabMetoda: TLabel
-    Left = 420
+    Left = 443
     Top = 104
-    Width = 449
+    Width = 402
     Height = 49
-    Caption = 'Metoda wprowadzenia liczb:'
+    Caption = 'Sortowanie grzebieniowe'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -37
     Font.Name = 'EFN Mokre Literki'
     Font.Style = []
     ParentFont = False
-    Visible = False
-  end
-  object LabIle: TLabel
-    Left = 422
-    Top = 104
-    Width = 445
-    Height = 49
-    Caption = 'Ile liczb chcesz wprowadzi'#263'?'
-    Font.Charset = EASTEUROPE_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -37
-    Font.Name = 'EFN Mokre Literki'
-    Font.Style = []
-    ParentFont = False
-    Visible = False
   end
   object LabWprowadzone: TLabel
     Left = 22
@@ -82,34 +54,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     Visible = False
-  end
-  object LabPodaj: TLabel
-    Left = 525
-    Top = 104
-    Width = 239
-    Height = 49
-    Caption = 'Podaj liczb'#281' nr '
-    Font.Charset = EASTEUROPE_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -37
-    Font.Name = 'EFN Mokre Literki'
-    Font.Style = []
-    ParentFont = False
-    Visible = False
-  end
-  object LabIleLos: TLabel
-    Left = 382
-    Top = 104
-    Width = 525
-    Height = 49
-    Caption = 'Ile liczb losowych wygenerowa'#263'?'
-    Font.Charset = EASTEUROPE_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -37
-    Font.Name = 'EFN Mokre Literki'
-    Font.Style = []
-    ParentFont = False
-    Visible = False
+    WordWrap = True
   end
   object ButMenu: TButton
     Left = 520
@@ -188,7 +133,7 @@ object Form1: TForm1
     Visible = False
     OnClick = ButOkClick
   end
-  object Button1: TButton
+  object ButOk2: TButton
     Left = 608
     Top = 248
     Width = 73
@@ -202,11 +147,11 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 5
     Visible = False
-    OnClick = Button1Click
+    OnClick = ButOk2Click
   end
   object ButSort: TButton
-    Left = 444
-    Top = 256
+    Left = 868
+    Top = 72
     Width = 401
     Height = 65
     Caption = 'Kliknij, aby posortowa'#263
@@ -221,8 +166,8 @@ object Form1: TForm1
     OnClick = ButSortClick
   end
   object ButWynik: TButton
-    Left = 378
-    Top = 256
+    Left = 738
+    Top = 72
     Width = 533
     Height = 65
     Caption = 'Kliknij, aby wy'#347'wietli'#263' posortowane liczby'
@@ -250,5 +195,21 @@ object Form1: TForm1
     TabOrder = 8
     Visible = False
     OnClick = ButPowrotClick
+  end
+  object ButOk3: TButton
+    Left = 608
+    Top = 248
+    Width = 73
+    Height = 41
+    Caption = 'OK'
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'EFN Mokre Literki'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 9
+    Visible = False
+    OnClick = ButOk3Click
   end
 end
