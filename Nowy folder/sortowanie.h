@@ -7,6 +7,7 @@
 #include <Controls.hpp>
 #include <StdCtrls.hpp>
 #include <Forms.hpp>
+#include <ComCtrls.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -24,7 +25,6 @@ __published:	// IDE-managed Components
         TButton *ButWynik;
         TButton *ButPowrot;
         TButton *ButOk3;
-        TListBox *ListBox1;
         void __fastcall ButMenuClick(TObject *Sender);
         void __fastcall ButSamClick(TObject *Sender);
         void __fastcall ButOkClick(TObject *Sender);

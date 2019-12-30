@@ -54,6 +54,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     Visible = False
+    WordWrap = True
   end
   object ButMenu: TButton
     Left = 520
@@ -210,14 +211,5 @@ object Form1: TForm1
     TabOrder = 9
     Visible = False
     OnClick = ButOk3Click
-  end
-  object ListBox1: TListBox
-    Left = 20
-    Top = 152
-    Width = 1249
-    Height = 409
-    ItemHeight = 13
-    TabOrder = 10
-    Visible = False
   end
 end

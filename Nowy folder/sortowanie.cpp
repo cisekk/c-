@@ -61,6 +61,8 @@ void __fastcall TForm1::ButMenuClick(TObject *Sender) //WEJSCIE DO MENU
 
 void __fastcall TForm1::ButSamClick(TObject *Sender)  //WYBOR LICZB SAMEMU
 {
+i=0;
+Edit1->Clear();
 LabMetoda -> Caption="Ile liczb chcesz wprowadziæ?";
 ButLosowe -> Visible=false;
 ButSam -> Visible=false;
@@ -74,6 +76,7 @@ void __fastcall TForm1::ButOkClick(TObject *Sender) //PODANIE ILOSCI
 LabMetoda->Caption ="Podaj liczbê nr "+IntToStr(i+1)+":";
 ButOk -> Visible=false;
 ilosc = Edit1->Text.ToInt();
+Edit1->Clear();
 ButOk2 -> Visible=true;
 }
 //---------------------------------------------------------------------------
@@ -83,6 +86,7 @@ void __fastcall TForm1::ButOk2Click(TObject *Sender) //PODANIE LICZB
 if (i<ilosc-1)
 {
 tablica[i] = Edit1->Text.ToInt();
+Edit1->Clear();
 LabMetoda->Caption ="Podaj liczbê nr "+IntToStr(i+2)+":";
 a = a + tablica[i] + " ";
 i=i+1;
@@ -106,27 +110,25 @@ i=0;
 void __fastcall TForm1::ButSortClick(TObject *Sender) //SORTOWANIE
 {
 sort (tablica, ilosc);
-ListBox1->Items->Clear();
-ListBox1->Items->Insert(0,tablica[i]);
-//b=b + tablica[i];
+b=b + tablica[i];
 while (i<ilosc-1)
 {
 i=i+1;
-ListBox1->Items->Insert(0,tablica[i]);
-//b = b + " " +tablica[i];
-//LabWprowadzone->Caption=b;
-
+b = b + " " +tablica[i];
+LabWprowadzone->Caption=b;
 }
 ButPowrot->Visible=True;
 ButSort->Visible=false;
+Edit1->Clear();
 }
 //---------------------------------------------------------------------------
 
-
 void __fastcall TForm1::ButPowrotClick(TObject *Sender) //POWROT DO MENU
 {
+a = "Podane liczby: ";
+b = "Liczby po sortowaniu: "   ;
 LabWprowadzone->Visible=false;
-ButMenu -> Visible = false;
+ButPowrot -> Visible = false;
 LabMetoda -> Caption = "Metoda wprowadzania liczb:";
 LabMetoda -> Visible = true;
 ButSam -> Visible = true;
@@ -160,25 +162,19 @@ i=0;
         while (i<ilosc)
         {
         tablica[i] = rand ();
-        ListBox1->Items->Insert(0,tablica[i]);
-        //a = a + tablica[i] + " ";
+        a = a + tablica[i] + " ";
         i=i+1;
         }
-
         Edit1 -> Visible=false;
-        //ListBox1->Items->Insert(0,Edit1->Text);
-        //LabWprowadzone->Caption=a;
-        //LabWprowadzone -> Visible=true;
-        ListBox1->Visible=true;
+        LabWprowadzone->Caption=a;
+        LabWprowadzone -> Visible=true;
         LabMetoda -> Visible=false;
         ButSort ->Visible=true;
         }
         ButOk3 -> Visible=false;
         sort (tablica, ilosc);
-        //ButPowrot->Visible=True;
         ButSort ->Visible=true;
         i=0;
-
 }
 //---------------------------------------------------------------------------
 
