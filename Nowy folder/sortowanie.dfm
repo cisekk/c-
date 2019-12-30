@@ -27,7 +27,7 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabMetoda: TLabel
-    Left = 420
+    Left = 443
     Top = 104
     Width = 402
     Height = 49
@@ -50,20 +50,6 @@ object Form1: TForm1
     Font.Charset = EASTEUROPE_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
-    Font.Name = 'EFN Mokre Literki'
-    Font.Style = []
-    ParentFont = False
-    Visible = False
-  end
-  object LabIleLos: TLabel
-    Left = 382
-    Top = 104
-    Width = 402
-    Height = 49
-    Caption = 'Sortowanie grzebieniowe'
-    Font.Charset = EASTEUROPE_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -37
     Font.Name = 'EFN Mokre Literki'
     Font.Style = []
     ParentFont = False
@@ -222,6 +208,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 9
+    Visible = False
     OnClick = ButOk3Click
   end
 end

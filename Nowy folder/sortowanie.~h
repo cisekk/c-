@@ -23,7 +23,6 @@ __published:	// IDE-managed Components
         TButton *ButSort;
         TButton *ButWynik;
         TButton *ButPowrot;
-        TLabel *LabIleLos;
         TButton *ButOk3;
         void __fastcall ButMenuClick(TObject *Sender);
         void __fastcall ButSamClick(TObject *Sender);
@@ -32,6 +31,7 @@ __published:	// IDE-managed Components
         void __fastcall ButSortClick(TObject *Sender);
         void __fastcall ButPowrotClick(TObject *Sender);
         void __fastcall ButLosoweClick(TObject *Sender);
+        void __fastcall ButOk3Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);

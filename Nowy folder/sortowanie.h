@@ -23,7 +23,6 @@ __published:	// IDE-managed Components
         TButton *ButSort;
         TButton *ButWynik;
         TButton *ButPowrot;
-        TLabel *LabIleLos;
         TButton *ButOk3;
         void __fastcall ButMenuClick(TObject *Sender);
         void __fastcall ButSamClick(TObject *Sender);

@@ -5,9 +5,7 @@
 #include <sstream>
 #include <string>
 #include <vcl.h>
-
 #pragma hdrstop
-
 #include "sortowanie.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -136,9 +134,15 @@ void __fastcall TForm1::ButLosoweClick(TObject *Sender)
 ButSam -> Visible = false;
 ButLosowe -> Visible = false;
 ButOk3 -> Visible = true;
-LabMetoda -> Caption = "Ile liczb wylosowaæ?";
+LabMetoda -> Caption = "Ile liczb chcesz wygenerowaæ?";
 Edit1 -> Visible=true;
-//ilosc = Edit1->Text.ToInt();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ButOk3Click(TObject *Sender)
+{
+ilosc = Edit1->Text.ToInt();
+LabMetoda -> Caption="Jaki ma byæ górny zakres?";
 }
 //---------------------------------------------------------------------------
 
