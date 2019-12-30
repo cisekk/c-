@@ -149,8 +149,8 @@ object Form1: TForm1
     OnClick = ButOk2Click
   end
   object ButSort: TButton
-    Left = 444
-    Top = 256
+    Left = 868
+    Top = 72
     Width = 401
     Height = 65
     Caption = 'Kliknij, aby posortowa'#263
@@ -165,8 +165,8 @@ object Form1: TForm1
     OnClick = ButSortClick
   end
   object ButWynik: TButton
-    Left = 378
-    Top = 256
+    Left = 738
+    Top = 72
     Width = 533
     Height = 65
     Caption = 'Kliknij, aby wy'#347'wietli'#263' posortowane liczby'
@@ -210,5 +210,14 @@ object Form1: TForm1
     TabOrder = 9
     Visible = False
     OnClick = ButOk3Click
+  end
+  object ListBox1: TListBox
+    Left = 20
+    Top = 152
+    Width = 1249
+    Height = 409
+    ItemHeight = 13
+    TabOrder = 10
+    Visible = False
   end
 end

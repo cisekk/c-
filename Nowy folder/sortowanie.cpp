@@ -106,15 +106,18 @@ i=0;
 void __fastcall TForm1::ButSortClick(TObject *Sender) //SORTOWANIE
 {
 sort (tablica, ilosc);
-b=b + tablica[i];
+ListBox1->Items->Clear();
+ListBox1->Items->Insert(0,tablica[i]);
+//b=b + tablica[i];
 while (i<ilosc-1)
 {
 i=i+1;
-b = b + " " +tablica[i];
-LabWprowadzone->Caption=b;
+ListBox1->Items->Insert(0,tablica[i]);
+//b = b + " " +tablica[i];
+//LabWprowadzone->Caption=b;
+
 }
 ButPowrot->Visible=True;
-
 ButSort->Visible=false;
 }
 //---------------------------------------------------------------------------
@@ -138,25 +141,44 @@ ButLosowe -> Visible = false;
 ButOk3 -> Visible = true;
 LabMetoda -> Caption = "Ile liczb chcesz wygenerowaæ?";
 Edit1 -> Visible=true;
+wybor=0;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::ButOk3Click(TObject *Sender) //WYBOR ZAKRESU I GENEROWANIE
 {
-LabMetoda -> Caption="Jaki ma byæ górny zakres?";
 if (wybor==0)
 {
-zakres = Edit1->Text.ToInt();
+LabMetoda -> Caption="Jaki ma byæ górny zakres?";
+ilosc = Edit1->Text.ToInt();
 wybor=1;
+i=0;
 }
         else if (wybor==1)
+        zakres = Edit1->Text.ToInt();
         {
-        for (i=0; i<ilosc; i++)
+        while (i<ilosc)
         {
-        tablica[i] = rand () %zakres+1;
+        tablica[i] = rand ();
+        ListBox1->Items->Insert(0,tablica[i]);
+        //a = a + tablica[i] + " ";
+        i=i+1;
         }
+
+        Edit1 -> Visible=false;
+        //ListBox1->Items->Insert(0,Edit1->Text);
+        //LabWprowadzone->Caption=a;
+        //LabWprowadzone -> Visible=true;
+        ListBox1->Visible=true;
         LabMetoda -> Visible=false;
+        ButSort ->Visible=true;
         }
+        ButOk3 -> Visible=false;
+        sort (tablica, ilosc);
+        //ButPowrot->Visible=True;
+        ButSort ->Visible=true;
+        i=0;
+
 }
 //---------------------------------------------------------------------------
 

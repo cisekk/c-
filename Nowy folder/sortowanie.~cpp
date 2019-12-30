@@ -13,6 +13,8 @@
 int n;
 int i=0;
 int ilosc=0;
+int wybor=0;
+int zakres;
 AnsiString a = "Podane liczby: ";
 AnsiString b = "Liczby po sortowaniu: "   ;
 int * tablica = new int[n];
@@ -67,7 +69,7 @@ Edit1 -> Visible=true;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::ButOkClick(TObject *Sender)
+void __fastcall TForm1::ButOkClick(TObject *Sender) //PODANIE ILOSCI
 {
 LabMetoda->Caption ="Podaj liczbê nr "+IntToStr(i+1)+":";
 ButOk -> Visible=false;
@@ -76,7 +78,7 @@ ButOk2 -> Visible=true;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::ButOk2Click(TObject *Sender)
+void __fastcall TForm1::ButOk2Click(TObject *Sender) //PODANIE LICZB
 {
 if (i<ilosc-1)
 {
@@ -101,7 +103,7 @@ i=0;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::ButSortClick(TObject *Sender)
+void __fastcall TForm1::ButSortClick(TObject *Sender) //SORTOWANIE
 {
 sort (tablica, ilosc);
 b=b + tablica[i];
@@ -110,15 +112,15 @@ while (i<ilosc-1)
 i=i+1;
 b = b + " " +tablica[i];
 LabWprowadzone->Caption=b;
+
 }
 ButPowrot->Visible=True;
-
 ButSort->Visible=false;
 }
 //---------------------------------------------------------------------------
 
 
-void __fastcall TForm1::ButPowrotClick(TObject *Sender)
+void __fastcall TForm1::ButPowrotClick(TObject *Sender) //POWROT DO MENU
 {
 LabWprowadzone->Visible=false;
 ButMenu -> Visible = false;
@@ -129,20 +131,50 @@ ButLosowe -> Visible = true;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::ButLosoweClick(TObject *Sender)
+void __fastcall TForm1::ButLosoweClick(TObject *Sender)   //LOSOWE LICZBY Z MENU
 {
 ButSam -> Visible = false;
 ButLosowe -> Visible = false;
 ButOk3 -> Visible = true;
 LabMetoda -> Caption = "Ile liczb chcesz wygenerowaæ?";
 Edit1 -> Visible=true;
+wybor=0;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::ButOk3Click(TObject *Sender)
+void __fastcall TForm1::ButOk3Click(TObject *Sender) //WYBOR ZAKRESU I GENEROWANIE
 {
-ilosc = Edit1->Text.ToInt();
+if (wybor==0)
+{
 LabMetoda -> Caption="Jaki ma byæ górny zakres?";
+ilosc = Edit1->Text.ToInt();
+wybor=1;
+i=0;
+}
+        else if (wybor==1)
+        zakres = Edit1->Text.ToInt();
+        {
+        while (i<ilosc)
+        {
+        tablica[i] = rand ();
+        ListBox1->Items->Insert(0,tablica[i]);
+        //a = a + tablica[i] + " ";
+        i=i+1;
+        }
+
+        Edit1 -> Visible=false;
+        //ListBox1->Items->Insert(0,Edit1->Text);
+        //LabWprowadzone->Caption=a;
+        //LabWprowadzone -> Visible=true;
+        ListBox1->Visible=true;
+        LabMetoda -> Visible=false;
+        }
+        ButOk3 -> Visible=false;
+        sort (tablica, ilosc);
+        //ButPowrot->Visible=True;
+        ButSort ->Visible=true;
+        i=0;
+
 }
 //---------------------------------------------------------------------------
 
