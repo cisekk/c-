@@ -37,7 +37,6 @@ int main()
     int * tablica = new int[n];
                 cout << "Program przedstawiajacy sortowanie grzebieniowe." << endl;
                 cout << "Przygotowal Krzysztof Suski" << endl;
-                cout << "i Mateusz Dobosz" << endl;
                 cout << endl<< endl << "Nacisnij dowolny klawisz, aby wejsc do menu" << endl;
                 getch();
     do
@@ -83,9 +82,7 @@ int main()
                 cin >> zakres;
                     for (i=0; i<ilosc; i++)
                         {
-                        Randomize();
-                        tablica[i] = Random(zakres)+1;
-                         //= rand (zakres+1);
+                        tablica[i] = rand () %zakres+1;
                         }
                         system ( "cls");
                                     cout << "Liczby przed sortowaniem:" << endl << endl;
