@@ -36,9 +36,7 @@ int main()
     int n;
     int * tablica = new int[n];
                 cout << "Program przedstawiajacy sortowanie grzebieniowe." << endl <<endl;
-                cout << "Przygotowali: " << endl;
-                cout << "Krzysztof Suski i Mateusz Dobosz" << endl;
-                cout << endl<< endl << "Nacisnij dowolny klawisz, aby wejsc do menu" << endl;
+                cout << "Przygotowal Krzysztof Suski " << endl;
                 getch();
     do
         {
